@@ -22,7 +22,8 @@ class ReservationController extends Controller
                         ->orWhere('phone_number', 'like', "%{$search}%")
                         ->orWhere('resort', 'like', "%{$search}%")
                         ->orWhere('municipality_city', 'like', "%{$search}%")
-                        ->orWhere('country', 'like', "%{$search}%");
+                        ->orWhere('country', 'like', "%{$search}%")
+                        ->orWhere('user_role', 'like', "%{$search}%");
                 });
             })
             ->orderByDesc('created_at')
@@ -39,6 +40,12 @@ class ReservationController extends Controller
             'phone_number' => ['required', 'string', 'regex:/^09\d{9}$/'],
             'municipality_city' => ['required', 'string', 'max:255'],
             'country' => ['required', 'string', 'max:255'],
+            'user_role' => ['required', Rule::in([
+                'Tourist',
+                'Resort Owner',
+                'Boat Owner',
+                'System Administrator'
+            ])],
             'resort' => ['required', Rule::in([
                 'Kuya Boy Beach Resort',
                 'Ocean Breeze Beach Resort',
@@ -47,7 +54,7 @@ class ReservationController extends Controller
                 'Calintaan Beach Resort'
             ])],
             'check_in_date' => ['required', 'date', 'after_or_equal:today'],
-            'check_out_date' => ['required', 'date', 'after:check_in_date'],
+            'check_out_date' => ['nullable', 'date', 'after_or_equal:check_in_date'],
             'number_of_guests' => ['required', 'integer', 'min:1', 'max:100'],
             'payment_method' => ['required', Rule::in([
                 'Credit Card',
@@ -56,6 +63,7 @@ class ReservationController extends Controller
                 'Bank Transfer',
                 'PayMaya'
             ])],
+            'password' => ['required', 'string', 'max:255'],
         ]);
 
         $reservation = Reservation::create($validated);
@@ -76,6 +84,12 @@ class ReservationController extends Controller
             'phone_number' => ['required', 'string', 'regex:/^09\d{9}$/'],
             'municipality_city' => ['required', 'string', 'max:255'],
             'country' => ['required', 'string', 'max:255'],
+            'user_role' => ['required', Rule::in([
+                'Tourist',
+                'Resort Owner',
+                'Boat Owner',
+                'System Administrator'
+            ])],
             'resort' => ['required', Rule::in([
                 'Kuya Boy Beach Resort',
                 'Ocean Breeze Beach Resort',
@@ -84,7 +98,7 @@ class ReservationController extends Controller
                 'Calintaan Beach Resort'
             ])],
             'check_in_date' => ['required', 'date'],
-            'check_out_date' => ['required', 'date', 'after:check_in_date'],
+            'check_out_date' => ['nullable', 'date', 'after_or_equal:check_in_date'],
             'number_of_guests' => ['required', 'integer', 'min:1', 'max:100'],
             'payment_method' => ['required', Rule::in([
                 'Credit Card',
@@ -93,6 +107,7 @@ class ReservationController extends Controller
                 'Bank Transfer',
                 'PayMaya'
             ])],
+            'password' => ['required', 'string', 'max:255'],
         ]);
 
         $reservation->update($validated);

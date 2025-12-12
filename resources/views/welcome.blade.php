@@ -351,6 +351,20 @@
             padding: 20px;
             color: var(--muted);
         }
+        footer {
+            background: var(--panel);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        footer p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -382,6 +396,12 @@
                         <label for="municipality_city">Municipality/City *</label>
                         <select id="municipality_city" name="municipality_city" required>
                             <option value="">-- Select Municipality/City --</option>
+                            <!-- Bicol Region Municipalities -->
+                            <option value="Bulan">Bulan</option>
+                            <option value="Irosin">Irosin</option>
+                            <option value="Legazpi">Legazpi</option>
+                            <option value="Matnog">Matnog</option>
+                            <!-- Other Common Cities in the Philippines -->
                             <option value="Manila">Manila</option>
                             <option value="Quezon City">Quezon City</option>
                             <option value="Makati">Makati</option>
@@ -397,6 +417,34 @@
                             <option value="Cavite">Cavite</option>
                             <option value="Rizal">Rizal</option>
                             <option value="Bulacan">Bulacan</option>
+                            <option value="Iloilo City">Iloilo City</option>
+                            <option value="Bacolod">Bacolod</option>
+                            <option value="Cagayan de Oro">Cagayan de Oro</option>
+                            <option value="Zamboanga City">Zamboanga City</option>
+                            <option value="Taguig">Taguig</option>
+                            <option value="Pasig">Pasig</option>
+                            <option value="Marikina">Marikina</option>
+                            <option value="Muntinlupa">Muntinlupa</option>
+                            <option value="Las Piñas">Las Piñas</option>
+                            <option value="Parañaque">Parañaque</option>
+                            <option value="Valenzuela">Valenzuela</option>
+                            <option value="Caloocan">Caloocan</option>
+                            <option value="Pasay">Pasay</option>
+                            <option value="Mandaluyong">Mandaluyong</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="Pateros">Pateros</option>
+                            <option value="Malabon">Malabon</option>
+                            <option value="Navotas">Navotas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_role">User Role *</label>
+                        <select id="user_role" name="user_role" required>
+                            <option value="">-- Select User Role --</option>
+                            <option value="Tourist">Tourist</option>
+                            <option value="Resort Owner">Resort Owner</option>
+                            <option value="Boat Owner">Boat Owner</option>
+                            <option value="System Administrator">System Administrator</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -446,8 +494,8 @@
                         <input type="date" id="check_in_date" name="check_in_date" required>
                     </div>
                     <div class="form-group">
-                        <label for="check_out_date">Check Out Date *</label>
-                        <input type="date" id="check_out_date" name="check_out_date" required>
+                        <label for="check_out_date">Check Out Date</label>
+                        <input type="date" id="check_out_date" name="check_out_date">
                     </div>
                     <div class="form-group">
                         <label for="number_of_guests">Number of Guests *</label>
@@ -463,6 +511,10 @@
                             <option value="Bank Transfer">Bank Transfer</option>
                             <option value="PayMaya">PayMaya</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" required>
                     </div>
                 </form>
             </div>
@@ -543,6 +595,12 @@
                     <div class="form-group">
                         <label for="edit_municipality_city">Municipality/City *</label>
                         <select id="edit_municipality_city" name="municipality_city" required>
+                            <!-- Bicol Region Municipalities -->
+                            <option value="Bulan">Bulan</option>
+                            <option value="Irosin">Irosin</option>
+                            <option value="Legazpi">Legazpi</option>
+                            <option value="Matnog">Matnog</option>
+                            <!-- Other Common Cities in the Philippines -->
                             <option value="Manila">Manila</option>
                             <option value="Quezon City">Quezon City</option>
                             <option value="Makati">Makati</option>
@@ -558,6 +616,33 @@
                             <option value="Cavite">Cavite</option>
                             <option value="Rizal">Rizal</option>
                             <option value="Bulacan">Bulacan</option>
+                            <option value="Iloilo City">Iloilo City</option>
+                            <option value="Bacolod">Bacolod</option>
+                            <option value="Cagayan de Oro">Cagayan de Oro</option>
+                            <option value="Zamboanga City">Zamboanga City</option>
+                            <option value="Taguig">Taguig</option>
+                            <option value="Pasig">Pasig</option>
+                            <option value="Marikina">Marikina</option>
+                            <option value="Muntinlupa">Muntinlupa</option>
+                            <option value="Las Piñas">Las Piñas</option>
+                            <option value="Parañaque">Parañaque</option>
+                            <option value="Valenzuela">Valenzuela</option>
+                            <option value="Caloocan">Caloocan</option>
+                            <option value="Pasay">Pasay</option>
+                            <option value="Mandaluyong">Mandaluyong</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="Pateros">Pateros</option>
+                            <option value="Malabon">Malabon</option>
+                            <option value="Navotas">Navotas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_user_role">User Role *</label>
+                        <select id="edit_user_role" name="user_role" required>
+                            <option value="Tourist">Tourist</option>
+                            <option value="Resort Owner">Resort Owner</option>
+                            <option value="Boat Owner">Boat Owner</option>
+                            <option value="System Administrator">System Administrator</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -598,8 +683,8 @@
                         <input type="date" id="edit_check_in_date" name="check_in_date" required>
                     </div>
                     <div class="form-group">
-                        <label for="edit_check_out_date">Check Out Date *</label>
-                        <input type="date" id="edit_check_out_date" name="check_out_date" required>
+                        <label for="edit_check_out_date">Check Out Date</label>
+                        <input type="date" id="edit_check_out_date" name="check_out_date">
                     </div>
                     <div class="form-group">
                         <label for="edit_number_of_guests">Number of Guests *</label>
@@ -614,6 +699,10 @@
                             <option value="Bank Transfer">Bank Transfer</option>
                             <option value="PayMaya">PayMaya</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_password">Password *</label>
+                        <input type="password" id="edit_password" name="password" required>
                     </div>
                 </div>
                 <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: flex-end;">
@@ -633,6 +722,16 @@
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('check_in_date').value = today;
             document.getElementById('check_out_date').value = today;
+            
+            // Set min date for check out to be same as check in
+            document.getElementById('check_in_date').addEventListener('change', function() {
+                const checkInDate = this.value;
+                const checkOutInput = document.getElementById('check_out_date');
+                checkOutInput.min = checkInDate;
+                if (checkOutInput.value && checkOutInput.value < checkInDate) {
+                    checkOutInput.value = checkInDate;
+                }
+            });
             
             loadReservations();
         });
@@ -654,11 +753,13 @@
                 phone_number: document.getElementById('phone_number').value,
                 municipality_city: document.getElementById('municipality_city').value,
                 country: document.getElementById('country').value,
+                user_role: document.getElementById('user_role').value,
                 resort: document.getElementById('resort').value,
                 check_in_date: document.getElementById('check_in_date').value,
-                check_out_date: document.getElementById('check_out_date').value,
+                check_out_date: document.getElementById('check_out_date').value || null,
                 number_of_guests: parseInt(document.getElementById('number_of_guests').value),
                 payment_method: document.getElementById('payment_method').value,
+                password: document.getElementById('password').value,
             };
 
             try {
@@ -681,6 +782,7 @@
                     const today = new Date().toISOString().split('T')[0];
                     document.getElementById('check_in_date').value = today;
                     document.getElementById('check_out_date').value = today;
+                    document.getElementById('check_out_date').min = today;
                     loadReservations();
                 } else {
                     showAlert(data.message || 'Error creating reservation', 'error');
@@ -791,6 +893,14 @@
                             <p>${reservation.country}</p>
                         </div>
                         <div class="detail-item">
+                            <label>User Role</label>
+                            <p>${reservation.user_role || 'N/A'}</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Password</label>
+                            <p>${reservation.password || 'N/A'}</p>
+                        </div>
+                        <div class="detail-item">
                             <label>Resort</label>
                             <p>${reservation.resort}</p>
                         </div>
@@ -800,7 +910,7 @@
                         </div>
                         <div class="detail-item">
                             <label>Check-Out Date</label>
-                            <p>${formatDate(reservation.check_out_date)}</p>
+                            <p>${reservation.check_out_date ? formatDate(reservation.check_out_date) : 'N/A'}</p>
                         </div>
                         <div class="detail-item">
                             <label>Number of Guests</label>
@@ -835,11 +945,27 @@
                 document.getElementById('edit_phone_number').value = reservation.phone_number;
                 document.getElementById('edit_municipality_city').value = reservation.municipality_city;
                 document.getElementById('edit_country').value = reservation.country;
+                document.getElementById('edit_user_role').value = reservation.user_role || '';
                 document.getElementById('edit_resort').value = reservation.resort;
                 document.getElementById('edit_check_in_date').value = reservation.check_in_date;
-                document.getElementById('edit_check_out_date').value = reservation.check_out_date;
+                document.getElementById('edit_check_out_date').value = reservation.check_out_date || '';
                 document.getElementById('edit_number_of_guests').value = reservation.number_of_guests;
                 document.getElementById('edit_payment_method').value = reservation.payment_method;
+                document.getElementById('edit_password').value = reservation.password || '';
+                
+                // Set min date for check out
+                const checkInDate = reservation.check_in_date;
+                document.getElementById('edit_check_out_date').min = checkInDate;
+                
+                // Add listener for check in date changes in edit form
+                document.getElementById('edit_check_in_date').addEventListener('change', function() {
+                    const checkInDate = this.value;
+                    const checkOutInput = document.getElementById('edit_check_out_date');
+                    checkOutInput.min = checkInDate;
+                    if (checkOutInput.value && checkOutInput.value < checkInDate) {
+                        checkOutInput.value = checkInDate;
+                    }
+                });
 
                 document.getElementById('editModal').classList.add('active');
             } catch (error) {
@@ -858,11 +984,13 @@
                 phone_number: document.getElementById('edit_phone_number').value,
                 municipality_city: document.getElementById('edit_municipality_city').value,
                 country: document.getElementById('edit_country').value,
+                user_role: document.getElementById('edit_user_role').value,
                 resort: document.getElementById('edit_resort').value,
                 check_in_date: document.getElementById('edit_check_in_date').value,
-                check_out_date: document.getElementById('edit_check_out_date').value,
+                check_out_date: document.getElementById('edit_check_out_date').value || null,
                 number_of_guests: parseInt(document.getElementById('edit_number_of_guests').value),
                 payment_method: document.getElementById('edit_payment_method').value,
+                password: document.getElementById('edit_password').value,
             };
 
             try {

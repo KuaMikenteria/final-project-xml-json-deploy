@@ -15,11 +15,13 @@ class Reservation extends Model
         'phone_number',
         'municipality_city',
         'country',
+        'user_role',
         'resort',
         'check_in_date',
         'check_out_date',
         'number_of_guests',
         'payment_method',
+        'password',
     ];
 
     protected $casts = [

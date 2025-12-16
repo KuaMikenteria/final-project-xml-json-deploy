@@ -30,11 +30,11 @@
     {{-- #endregion --}}
     <style>
         :root {
-            --bg: #f3e8ff;
+            --bg: #aa8acc;
             --panel: #ffffff;
-            --accent: #9333ea;
-            --accent-hover: #7e22ce;
-            --text: #1b1b1b;
+            --accent: #842cd6;
+            --accent-hover: #5b119b;
+            --text: #000000;
             --muted: #6b7280;
             --border: #e5e7eb;
             --danger: #ef4444;
